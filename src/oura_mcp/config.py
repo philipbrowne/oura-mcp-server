@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     oauth_revoke_url: str = "https://api.ouraring.com/oauth/revoke"
 
     # OAuth2 scopes
-    oauth_scopes: str = "personal daily heartrate workout tag session spo2"
+    oauth_scopes: str = "email personal daily heartrate workout tag session spo2 stress ring_configuration heart_health"
 
     # Token storage path
     token_storage_path: str = "~/.config/oura-mcp/tokens.json"

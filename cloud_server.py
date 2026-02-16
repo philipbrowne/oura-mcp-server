@@ -13,8 +13,8 @@ from oura_mcp.server import mcp
 
 
 def main() -> None:
-    """Run the Oura MCP server with SSE transport."""
-    mcp.run(transport="sse")
+    """Run the Oura MCP server with streamable HTTP transport."""
+    mcp.run(transport="streamable-http")
 
 
 if __name__ == "__main__":
