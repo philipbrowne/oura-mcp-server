@@ -25,8 +25,9 @@ def main() -> None:
     """Run the Oura MCP server with SSE transport and health check."""
     app = mcp.sse_app()
 
-    # Add health check route for Railway
-    app.routes.insert(0, Route("/health", health))
+    # Add health check routes for Railway (root + /health)
+    app.routes.insert(0, Route("/", health))
+    app.routes.insert(1, Route("/health", health))
 
     port = int(os.environ.get("PORT", os.environ.get("FASTMCP_PORT", "8000")))
     uvicorn.run(app, host="0.0.0.0", port=port)
